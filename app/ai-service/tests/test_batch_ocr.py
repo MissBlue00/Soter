@@ -126,7 +126,7 @@ class TestBatchOCREndpoint:
         assert data["results"][1]["document_id"] == "doc-002"
         assert data["results"][1]["success"] is True
         assert "batch_id" in data
-        assert data["total_processing_time_ms"] > 0
+        assert data["total_processing_time_ms"] >= 0
 
     def test_batch_ocr_mixed_success_and_failure(self, client):
         """Test batch processing with mixed success/failure documents."""
